@@ -20,7 +20,7 @@ import { BadgeList } from "@/components/elements/lists/List";
 
 const builder = imageUrlBuilder({ projectId, dataset });
 
-export default async function Projects({ post }: { post: SanityDocument }) {
+export default async function Projects() {
   const initial = await loadQuery<SanityDocument[]>(
     PROJECTS_QUERY,
     {},
