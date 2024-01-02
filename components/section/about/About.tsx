@@ -1,6 +1,6 @@
 // import { Badge } from "@sanity/ui";
 import { BadgeList } from "@/components/elements/lists/List";
-import styles from "./about.module.scss";
+import styles from "./About.module.scss";
 
 export default function About() {
   const pageHeader = "About me";
