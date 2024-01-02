@@ -1,0 +1,50 @@
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin responsive-font($min-size, $max-size, $min-width, $max-width) {
+  font-size: $min-size;
+  @media (min-width: $min-width) {
+    font-size: calc(
+      #{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}) /
+            (#{$max-width} - #{$min-width}))
+    );
+  }
+  @media (min-width: $max-width) {
+    font-size: $max-size;
+  }
+}
+
+@mixin gradient-background($start-color, $end-color) {
+  background: linear-gradient(to right, $start-color, $end-color);
+}
+
+@mixin animation(
+  $name,
+  $duration,
+  $timing-function,
+  $delay,
+  $iteration-count,
+  $direction
+) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timing-function;
+  animation-delay: $delay;
+  animation-iteration-count: $iteration-count;
+  animation-direction: $direction;
+}

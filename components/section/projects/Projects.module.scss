@@ -1,0 +1,36 @@
+.projects {
+  // background-color: lightgreen;
+  h2 {
+    text-align: center;
+  }
+}
+
+.projectCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: var(--sp-16) var(--sp-64);
+  margin-top: var(--sp-64);
+
+  .projectCard__preview img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.6;
+    object-fit: cover;
+  }
+  .projectCard__desc > * {
+    margin-top: var(--sp-20);
+  }
+  @media (min-width: 50rem) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  }
+  @media (width < 50rem) {
+    .projectCard__desc {
+      text-align: center;
+    }
+    ul {
+      justify-content: center;
+    }
+  }
+}
+
+// time stamp 146

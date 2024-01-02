@@ -1,0 +1,26 @@
+// .badgeList {
+//   background-color: green;
+// }
+.badgeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-10);
+  font-size: var(--fs-sm);
+
+  li {
+    padding: var(--sp-4) var(--sp-8);
+    border-radius: var(--sp-4);
+    background: var(--clr-gray-md);
+    font-size: var(--fs-sm);
+  }
+}
+
+.badgeList .themed {
+  background-color: var(--clr-primary-lt);
+}
+.badgeList .transparent {
+  color: var(--clr-gray-dk);
+}
+.badgeList .transparent li:first-of-type {
+  padding-left: 0;
+}

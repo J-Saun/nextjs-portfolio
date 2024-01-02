@@ -1,0 +1,28 @@
+// @use "../scss/variables" as *;
+
+.about {
+  .container {
+    // background-color: lightblue;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--sp-64);
+    border-block: var(--border-styles);
+  }
+  // background-color: $green-950;
+  // div {
+
+  // }
+
+  @media (min-width: 50rem) {
+    .container {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+  }
+  // &.light {
+  //   color: $green-50;
+  // }
+  // &.dark {
+  //   color: $green-950;
+  //   background-color: $green-50;
+  // }
+}

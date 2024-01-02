@@ -1,0 +1,17 @@
+.contact {
+  h2 {
+    font-size: calc(var(--fs-h3) + 0.5rem);
+  }
+  .container {
+    text-align: center;
+    border: var(--border-styles);
+    border-radius: var(--sp-20);
+    background-color: var(--clr-bg);
+    margin-bottom: calc(var(--sp-16) * -1);
+    position: relative;
+  }
+  .icon {
+    width: 1rem;
+    fill: var(--clr-primary-text);
+  }
+}
