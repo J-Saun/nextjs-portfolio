@@ -1,3 +1,5 @@
+import styles from "./Slug.module.scss";
+
 import { QueryParams, SanityDocument } from "next-sanity";
 import { draftMode } from "next/headers";
 
@@ -7,8 +9,8 @@ import { POSTS_QUERY, POST_QUERY } from "@/sanity/lib/queries";
 import PostPreview from "@/components/posts/PostPreview";
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
-import { ProjectNavbar } from "@/components/navbar/Navbar";
 
+import { ProjectNavbar } from "@/components/navbar/Navbar";
 import Carousel from "@/components/carousel/Carousel";
 import { BadgeList } from "@/components/elements/lists/List";
 
@@ -43,22 +45,25 @@ export default async function Page({ params }: { params: QueryParams }) {
   return draftMode().isEnabled ? (
     <PostPreview initial={initial} params={params} />
   ) : (
-    <div className="projectPage">
+    <div className={styles.project_page}>
       <div className="container">
         <ProjectNavbar />
       </div>
-
-      <Carousel items={images} alts={imageAlts} captions={imageCaptions} />
-      <div className="mx-auto flex space-evenly max-w-7xl px-4 sm:mt-32 sm:px-6 lg:mt-36 lg:px-8">
-        <div className="flex flex-col space-y-7 mt-10">
-          <h1 className="text-4xl font-bold leading-tight tracking-wide xl:text-5xl">
+      <main className={styles.project_body}>
+        <Carousel items={images} alts={imageAlts} captions={imageCaptions} />
+        {/* <div className="mx-auto flex space-evenly max-w-7xl px-4 sm:mt-32 sm:px-6 lg:mt-36 lg:px-8"> */}
+        {/* <div className="flex flex-col space-y-7 mt-10"> */}
+        <div className="container mt-5">
+          <h1 className="text-4xl font-bold mt-5">
             {data.title}
             <span className="sr-only">{data.title}</span>
           </h1>
-          <BadgeList badges={techStack} badgeStyle="themed" />
+          <PortableText value={data.body} />
+          <div className={`${styles.project__desc}`}>
+            <BadgeList badges={techStack} badgeStyle="themed" />
+          </div>
         </div>
-        <PortableText value={data.body} />
-      </div>
+      </main>
     </div>
   );
 }

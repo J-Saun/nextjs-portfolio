@@ -1,9 +1,9 @@
 // ./app/layout.tsx
-
+import Script from "next/script";
 import { draftMode } from "next/headers";
 import "./scss/globals.scss";
 import VisualEditing from "@/components/posts/VisualEditing";
-import Script from "next/script";
+
 export default function RootLayout({
   children,
 }: {
@@ -12,11 +12,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white">
-        {/* <h1>Root Layout</h1> */}
         {children}
         {draftMode().isEnabled && <VisualEditing />}
-
-        <Script src="../public/script.ts" strategy="beforeInteractive" />
+        <script src="/script.js" />
       </body>
     </html>
   );

@@ -1,1 +1,38 @@
+// .projectBody {
+//   display: grid;
+//   grid-template-columns: minmax(0, 1fr);
+//   gap: var(--sp-64);
+//   border-block: var(--border-styles);
+// }
+.project_page {
+  .project_body {
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: var(--sp-16) var(--sp-64);
+    margin-top: var(--sp-64);
+  }
 
+  .project__head {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.6;
+    object-fit: cover;
+  }
+  .project__desc > * {
+    margin-top: var(--sp-20);
+  }
+  @media (min-width: 50rem) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  }
+  @media (width < 50rem) {
+    .project__desc {
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      justify-content: center;
+    }
+  }
+}

@@ -3,7 +3,6 @@
 import styles from "./Carousel.module.scss";
 
 import { useState } from "react";
-
 import { MdOutlineArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 import Image from "next/image";
@@ -41,7 +40,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, alts, captions }) => {
   };
   // console.log("Carousel file: ", items);
   return (
-    <div className="relative w-full">
+    <div className={`relative w-full ${styles.carousel}`}>
       <Image
         src={builder
           .image(`${items[currentIndex]}`)
@@ -61,8 +60,8 @@ const Carousel: React.FC<CarouselProps> = ({ items, alts, captions }) => {
       </h3>
 
       <span className="sr-only">{alts[currentIndex]}</span>
-      <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-4 bg-black bg-opacity-50 text-white">
-        <button className="text-white px-4 py-2 rounded" onClick={handlePrev}>
+      <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-black bg-opacity-50 text-white">
+        <button className="text-white px-4 py-2" onClick={handlePrev}>
           <MdOutlineArrowBackIosNew />
         </button>
         <div className={`flex items-center space-x-2 `}>
@@ -85,56 +84,3 @@ const Carousel: React.FC<CarouselProps> = ({ items, alts, captions }) => {
 };
 
 export default Carousel;
-
-// export const EmblaCarousel = (props: any) => {
-//   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
-
-//   useEffect(() => {
-//     if (emblaApi) {
-//       console.log(emblaApi.slideNodes()); // Access API
-//     }
-//   }, [emblaApi]);
-
-//   const pic = props.props[0][1].image.asset;
-//   console.log(
-//     "Carousel props key: ",
-//     // props,
-//     // props.props[0][0].image.asset._ref
-//     props.props[0][0].image,
-//     pic
-//   );
-
-//   const carouselImages = props.props[0];
-//   return (
-//     <div className={styles.embla} ref={emblaRef}>
-//       <div className="embla__container">
-//         <>
-//           <div className={styles.embla} ref={emblaRef}>
-//             <div className="embla__container">
-//               <div className={styles.embla__slide}>
-//                 {carouselImages && (
-//                   <Image
-//                     src={builder
-//                       .image(props.props[0][0].image.asset)
-//                       .width(300)
-//                       .height(300)
-//                       .quality(80)
-//                       .url()}
-//                     width={300}
-//                     height={300}
-//                     alt={"alt"}
-//                   />
-//                 )}
-//               </div>
-//               <div className={styles.embla__slide}>Slide 1</div>
-//               <div className={styles.embla__slide}>Slide 2</div>
-//               {/* <div className={styles.embla__slide}>Slide 3</div> */}
-//             </div>
-//           </div>
-
-//           <p></p>
-//         </>
-//       </div>
-//     </div>
-//   );
-// };

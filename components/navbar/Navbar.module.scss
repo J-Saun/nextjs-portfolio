@@ -32,6 +32,7 @@
     color: var(--clr-primary-text);
     background: var(--clr-primary);
   }
+
   .icon {
     fill: var(--clr-primary-text);
     width: 0.75rem;
@@ -99,6 +100,10 @@
     font-weight: var(--fw-600);
     padding-block: var(--sp-10) var(--sp-10) / 2;
     margin-block: var(--sp-8);
+  }
+  .homeLink {
+    font-size: 2rem;
+    font-weight: 700;
   }
   .news-letter {
     color: red;
